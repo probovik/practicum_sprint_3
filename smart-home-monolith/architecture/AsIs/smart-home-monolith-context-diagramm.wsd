@@ -6,7 +6,7 @@ top to bottom direction
 !includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
 
 Person(customer, "Пользователь")
-System(sensor, "Датчик")
+System_Ext(sensor, "Датчик")
 System_Boundary(c1, "Теплый дом") {
     System(heatingSystem, "Управление отоплением", "Изменяет значения параметров системы отопления")
     System(monitoringSystem, "Мониторинг температуры", "Возвращает текущие значение температуры")
@@ -14,5 +14,4 @@ System_Boundary(c1, "Теплый дом") {
 Rel(customer, heatingSystem, "Изменяет значение параметра")
 Rel(monitoringSystem, customer, "Возвращает текущее состояние")
 Rel(sensor, heatingSystem, "Передает текущее значение датчика в систему")
-
 @enduml
